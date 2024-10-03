@@ -3,9 +3,17 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  nitro: {
-    preset: "cloudflare-pages"
+  runtimeConfig: {
+    secret: process.env.SECRET,
   },
 
-  modules: ["nitro-cloudflare-dev"]
+  nitro: {
+    preset: 'cloudflare-pages',
+  },
+
+  modules: ['nitro-cloudflare-dev', '@prisma/nuxt'],
+
+  prisma: {
+    installStudio: false,
+  },
 })
